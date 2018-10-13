@@ -1,0 +1,14 @@
+{
+  "msgUrl": "http://sms.tnbchina.com/api/v1/SMS/SingleSendAsync",
+  "codeValidityTime": 600000,
+  "repeatRequestGap": 60000,
+  "wxAppId": "wx84a47da7962fda24",
+  "wxAppSecret": "ac066cb44543b78048f450164a3932bf",
+  "wxPartnerKey": "85066585f469d60936ac7f5fa6f80333",
+  "wxMchId": "1495273782",
+  "host": "47.97.16.13",
+  "port": "4000",
+  "accessKeyId": "LTAIQxxRrWReBVbx",
+  "accessKeySecret": "3t6f1G8Lh64ZhHENdOHCSNUXDU11v1",
+  "bucket": "usee-doll-catching"
+}

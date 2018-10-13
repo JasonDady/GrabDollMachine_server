@@ -1,0 +1,106 @@
+{
+  "name": "Device",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "deviceId": {
+      "type": "string",
+      "id": true
+    },
+    "sockName": {
+      "type": "string",
+      "description": "设备的sock，连接控制设备用ip:port"
+    },
+    "status": {
+      "type": "number",
+      "description": "娃娃机状态：0：空闲，1：游戏中，2：游戏结束"
+    },
+    "online": {
+      "type": "boolean",
+      "description": "设备上下线"
+    },
+    "isRemoved": {
+      "type": "boolean",
+      "description": "设备是否被移除",
+      "default": false
+    },
+    "winningState": {
+      "type": "number",
+      "description": "中奖状态 0：没有中奖，1：有中奖"
+    },
+    "faultWarn": {
+      "type": "number",
+      "description": "机器故障：0：无，其他为故障代号；"
+    },
+    "remainTime": {
+      "type": "number",
+      "description": "剩余时间"
+    },
+    "price": {
+      "type": "number",
+      "description": "设备价格",
+      "default": 0
+    },
+    "imageUrl": {
+      "type": "string",
+      "description": "类别图片"
+    },
+    "desc": {
+      "type": "string",
+      "description": "类别描述"
+    },
+    "name": {
+      "type": "string",
+      "description": "名称"
+    },
+    "bodyLength": {
+      "type": "number",
+      "description": "体长"
+    },
+    "frontCameraUrl": {
+      "type": "string",
+      "description": "前置摄像头Url"
+    },
+    "sideCameraUrl": {
+      "type": "string",
+      "description": "侧面摄像头Url"
+    },
+    "createTime": {
+      "type": "date",
+      "description": "创建时间"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "manager": {
+      "type": "belongsTo",
+      "model": "Manager",
+      "foreignKey": "managerId"
+    },
+    "userOnline": {
+      "type": "hasMany",
+      "model": "UserOnline",
+      "foreignKey": "deviceId"
+    },
+    "gameAppUser": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": "gameAppUserId"
+    },
+    "order": {
+      "type": "hasMany",
+      "model": "Order",
+      "foreignKey": "deviceId"
+    },
+    "currentOrder": {
+      "type": "belongsTo",
+      "model": "Order",
+      "foreignKey": "currentOrderId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

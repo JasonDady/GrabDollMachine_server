@@ -1,0 +1,34 @@
+{
+  "name": "DeviceCategory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "description": "类别ID"
+    },
+    "imageUrl": {
+      "type": "string",
+      "description": "类别图片"
+    },
+    "desc": {
+      "type": "string",
+      "description": "类别描述"
+    },
+    "name": {
+      "type": "string",
+      "description": "名称"
+    },
+    "bodyLength": {
+      "type": "number",
+      "description": "体长"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

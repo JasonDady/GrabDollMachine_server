@@ -1,0 +1,29 @@
+{
+  "name": "CheckCode",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mobile": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "createAt": {
+      "type": "date"
+    },
+    "expireAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

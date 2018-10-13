@@ -1,0 +1,72 @@
+{
+  "name": "Order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "orderNo": {
+      "type": "string",
+      "required": true,
+      "description": "订单号"
+    },
+    "out_trade_no": {
+      "type": "string",
+      "description": "商户订单号"
+    },
+    "price": {
+      "type": "number",
+      "description": "订单价格 | 支付金额",
+      "default": 0
+    },
+    "createTime": {
+      "type": "date",
+      "description": "创建时间"
+    },
+    "status": {
+      "type": "number",
+      "description": "订单状态 0 - 失败 1 - 成功 2 - 未支付 3 - 已支付"
+    },
+    "exchangeStatus": {
+      "type": "number",
+      "default": 0,
+      "description": "兑换状态 2 - 兑换金币 1 - 邮寄"
+    },
+    "username": {
+      "type": "string",
+      "description": "收货人姓名"
+    },
+    "address": {
+      "type": "string",
+      "description": "发货地址"
+    },
+    "mobile": {
+      "type": "number",
+      "description": "手机号码"
+    },
+    "dollType": {
+      "type": "number",
+      "description": "娃娃类型"
+    },
+    "deliverGoodsStatus": {
+      "type": "number",
+      "description": "发货状态 0 - 未发货 1 - 已发货"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "device": {
+      "type": "belongsTo",
+      "model": "Device",
+      "foreignKey": "deviceId"
+    },
+    "appUser": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
